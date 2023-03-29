@@ -53,35 +53,4 @@ async def test_socket_can_bus():
         time.sleep(0.01) # send every 10 ms
         
 
-@pytest.mark.asyncio
-async def test_get_current_speed():
-    mqtt_client = MqttClient()
-    inttesthelper = IntTestHelper()
-    print(f"{mqtt_client} can be used when your app compiles succesfully!")
-    print(f"{inttesthelper} can be used when your app compiles succesfully!")
 
-    # When your app compiles succesfully use the inttesthelper to get viable responses
-    response = "{}"
-    # response = await inttesthelper.set_float_datapoint(
-    #     name="Vehicle.Speed", value=0
-    # )
-
-    # assert len(response.errors) == 0
-
-    # response = mqtt_client.publish_and_wait_for_response(
-    #     request_topic=GET_SPEED_REQUEST_TOPIC,
-    #     response_topic=GET_SPEED_RESPONSE_TOPIC,
-    #     payload={},
-    # )
-
-    body = json.loads(response)
-    # add expected message to get it assert
-    expected_message = "Current Speed = 0.0"
-
-    print(f"Received response: {body}")
-    print(f"Expected message: {expected_message}")
-
-    # Uncomment to test the behaviour of the SampleApp as provided by
-    #     the template repository:
-    # assert body["result"]["status"] == 0
-    # assert body["result"]["message"] == expected_message
